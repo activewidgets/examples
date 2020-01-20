@@ -9,6 +9,7 @@
   "svelte": "viewer/index.js",
   "files": [
     "dist",
+    "northwind",
     "viewer"
   ],
   "scripts": {

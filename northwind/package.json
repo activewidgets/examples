@@ -1,0 +1,6 @@
+{
+  "name": "@activewidgets/examples/northwind",
+  "main": "./common.js",
+  "module": "./module.js",
+  "private": true
+}
