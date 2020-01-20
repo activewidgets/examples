@@ -3,9 +3,8 @@
 
     export let url;
     export let pages;
-    export let data;
     export let current;
-    export let render;
+    export let mount;
 
     let map = {}
 
@@ -15,11 +14,10 @@
         });
     });
 
-
     let fn = map[current];
 
     if (fn){
-        fn({render}, {}, data);
+        fn({mount}, {});
     }
 
 </script>

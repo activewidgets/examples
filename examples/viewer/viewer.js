@@ -1,12 +1,10 @@
 ﻿
-import {Viewer} from '../viewer/index.js';
-import {mount} from '@activewidgets/js';
-import * as pages from './index.js';
-import * as northwind from './northwind.js';
+import {Viewer} from '../../viewer/index.js';
+import {mount as _mount} from '@activewidgets/js';
+import * as pages from '../index.js';
 
-let data = {northwind};
 
-function render(tag, props){
+function mount(tag, props){
 
     let container = document.getElementById('app'),
         target = document.createElement(tag);
@@ -14,7 +12,7 @@ function render(tag, props){
     container.innerHTML = '';
     container.appendChild(target);
 
-    return mount(target, props);
+    _mount(target, props);
 }
 
 
@@ -26,5 +24,5 @@ function clean(){
 
 const viewer = new Viewer({
     target: document.body,
-    props: {pages, data, render, clean}
+    props: {pages, mount, clean}
 });

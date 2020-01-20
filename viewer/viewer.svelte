@@ -7,8 +7,7 @@
     import NotFound from './404.svelte';
 
     export let pages;
-    export let data;
-    export let render;
+    export let mount;
     export let clean;
 
     let view, current;
@@ -56,4 +55,4 @@
 
 </style>
 
-<svelte:component this={view} {pages} {data} {url} {current} {render}/>
+<svelte:component this={view} {pages} {url} {current} {mount}/>

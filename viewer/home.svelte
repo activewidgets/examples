@@ -3,9 +3,8 @@
 
     export let url;
     export let pages;
-    export let data;
     export let current;
-    export let render;
+    export let mount;
 
     let sections = Object.keys(pages).map(name => ({
         name,
