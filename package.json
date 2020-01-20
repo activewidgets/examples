@@ -15,8 +15,11 @@
     "build": "rimraf dist/* && rollup -c",
     "start": "parcel examples/index.html -d public --open"
   },
-  "dependencies": {},
+  "dependencies": {
+    "page": "^1"
+  },
   "devDependencies": {
+    "@activewidgets/js": "0.0.9",
     "@rollup/plugin-node-resolve": "^6",
     "parcel": "^1",
     "parcel-plugin-svelte": "^4",
