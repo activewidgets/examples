@@ -2,7 +2,8 @@
 import {Viewer} from '../viewer/index.js';
 
 const viewer = new Viewer({
-    target: document.querySelector('#app')
+    target: document.body,
+    props: {
+        msg: 'Hello World'
+    }
 });
-
-//document.querySelector('#app').innerHTML = 'ok';
