@@ -14,16 +14,28 @@ var options = {
 var bundler = new Bundler(files, options);
 var app = express();
 
-app.get(/^(\/|\/[\w-]+\/)$/, (req, res, next) => {
+app.get(/^(\/|\/[\w-]+\/)$/, function(req, res, next){
   req.url += 'index.html';
   next();
 });
 
 app.use(bundler.middleware());
 
-var port = Number(process.env.PORT || 1234);
-app.listen(port);
+var started;
 
-console.log('listening at http://localhost:' + port);
+bundler.on('bundled', function(){
 
-opn('http://localhost:' + port);
+    if (started){
+        return;
+    }
+
+    started = true;
+
+    var port = Number(process.env.PORT || 1234);
+    app.listen(port);
+
+    console.log('   listening at http://localhost:' + port);
+    console.log('');
+
+    opn('http://localhost:' + port);
+});
