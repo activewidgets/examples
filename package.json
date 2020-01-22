@@ -8,13 +8,17 @@
   "module": "./dist/esm/examples.js",
   "svelte": "viewer/index.js",
   "files": [
+    "bin",
     "dist",
     "northwind",
     "viewer"
   ],
+  "bin": {
+    "serve-examples": "bin/serve-examples.js"
+  },
   "scripts": {
     "build": "rimraf dist/* && rollup -c",
-    "start": "parcel examples/index.html -d public --open"
+    "start": "node bin/serve-examples.js"
   },
   "dependencies": {
     "page": "^1"
@@ -22,6 +26,7 @@
   "devDependencies": {
     "@activewidgets/js": "0.0.9",
     "@rollup/plugin-node-resolve": "^6",
+    "express": "^4",
     "parcel": "^1",
     "parcel-plugin-svelte": "^4",
     "rimraf": "^3",
