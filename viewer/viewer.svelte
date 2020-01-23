@@ -6,6 +6,7 @@
     import Example from './example.svelte';
     import NotFound from './404.svelte';
 
+    export let readme;
     export let pages;
     export let mount;
     export let clean;
@@ -56,3 +57,5 @@
 </style>
 
 <svelte:component this={view} {pages} {url} {current} {mount}/>
+
+{@html readme}

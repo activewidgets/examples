@@ -2,6 +2,7 @@
 import {Viewer} from '../../viewer/index.js';
 import {mount as _mount} from '@activewidgets/js';
 import * as pages from '../index.js';
+import readme from '../README.md';
 
 
 function mount(tag, props){
@@ -24,5 +25,5 @@ function clean(){
 
 const viewer = new Viewer({
     target: document.body,
-    props: {pages, mount, clean}
+    props: {readme, pages, mount, clean}
 });
