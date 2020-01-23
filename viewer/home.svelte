@@ -3,8 +3,7 @@
 
     export let url;
     export let pages;
-    export let current;
-    export let mount;
+    export let readme;
 
     let sections = Object.keys(pages).map(name => ({
         name,
@@ -37,3 +36,5 @@
     {/each}
 {/each}
 </div>
+
+{@html readme}

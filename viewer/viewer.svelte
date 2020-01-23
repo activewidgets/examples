@@ -11,7 +11,7 @@
     export let mount;
     export let clean;
 
-    let view, current;
+    let view, props;
 
     function url(...args){
         return args.map(s => s.trim().replace(/\W+/g, '-').toLowerCase()).join('/');
@@ -20,32 +20,32 @@
 
     page('/', () => {
         view = Home;
+        props = {url, pages, readme};
     });
 
     page('/examples/:section/:item', ({params}) => {
         view = Example;
-        current = url(params.section, params.item);
+        props = {mount, pages, url, current: url(params.section, params.item)};
     });
 
     page.exit('/examples/*', (ctx, next) => {
-        current = '';
         clean();
         next();
     });
 
     page('/test/:section/:item', ({params}) => {
         view = Example;
-        current = url(params.section, params.item);
+        props = {mount, pages, url, current: url(params.section, params.item)};
     });
 
     page.exit('/test/*', (ctx, next) => {
-        current = '';
         clean();
         next();
     });
 
     page('*', () => {
         view = NotFound;
+        props = null;
     });
 
     page.start();
@@ -56,6 +56,4 @@
 
 </style>
 
-<svelte:component this={view} {pages} {url} {current} {mount}/>
-
-{@html readme}
+<svelte:component this={view} {...props} />
