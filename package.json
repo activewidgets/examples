@@ -6,7 +6,11 @@
   "license": "MIT",
   "main": "./dist/umd/examples.js",
   "module": "./dist/esm/examples.js",
-  "svelte": "viewer/index.js",
+  "svelte": {
+    "compiler": {
+        "css":  false
+    }
+  },
   "files": [
     "bin",
     "dist",
