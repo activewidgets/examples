@@ -4,7 +4,7 @@ var Bundler = require('parcel');
 var express = require('express');
 var opn = require('opn');
 
-var files = ['examples/**/*.html'];
+var files = ['examples/index.html', 'examples/*/*.html'];  // to match netlify
 
 var options = {
     outDir: './out',
@@ -14,7 +14,17 @@ var options = {
 var bundler = new Bundler(files, options);
 var app = express();
 
-app.get(/^(\/|\/[\w-]+\/)$/, function(req, res, next){
+function index(req, res, next){
+    req.url = '/index.html';
+    next();
+}
+
+app.get('/', index);
+app.get('/examples/*', index);
+app.get('/zoom/*', index);
+app.get('/test/*', index);
+
+app.get(/^\/[\w-]+\/$/, function(req, res, next){
   req.url += 'index.html';
   next();
 });
