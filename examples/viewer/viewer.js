@@ -3,12 +3,17 @@ import {Viewer} from '../../viewer/index.js';
 import {mount as _mount} from '@activewidgets/js';
 import * as pages from '../index.js';
 import readme from '../README.md';
+import logo from './js.svg';
+
+
+let container = document.getElementById('app');
+
+container.innerHTML = '';
 
 
 function mount(tag, props){
 
-    let container = document.getElementById('app'),
-        target = document.createElement(tag);
+    let target = document.createElement(tag);
 
     container.innerHTML = '';
     container.appendChild(target);
@@ -18,12 +23,11 @@ function mount(tag, props){
 
 
 function clean(){
-    let container = document.getElementById('app');
     container.innerHTML = '';
 }
 
 
 const viewer = new Viewer({
     target: document.body,
-    props: {readme, pages, mount, clean}
+    props: {logo, readme, pages, mount, clean}
 });

@@ -1,40 +1,18 @@
 
 <script>
-
-    export let url;
-    export let pages;
     export let readme;
-
-    let sections = Object.keys(pages).map(name => ({
-        name,
-        items: Object.keys(pages[name]).map(item => ({
-            item,
-            url: url(name, item)
-        }))
-    }));
-
 </script>
 
 <style>
 
-.menu-header {
-    line-height: 2em;
-}
-
-.menu-item {
-    line-height: 1.5em;
-    text-indent: 2em;
+.page {
+    display: block;
+    max-width: 46rem;
+    margin: -4rem auto 0;
 }
 
 </style>
 
-<div>
-{#each sections as {name, items}}
-    <div class="menu-header">{name}</div>
-    {#each items as {item, url}}
-        <div class="menu-item"><a href="/examples/{url}">{item}</a></div>
-    {/each}
-{/each}
-</div>
-
-{@html readme}
+<main class="page">
+    {@html readme}
+</main>
