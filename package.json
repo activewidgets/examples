@@ -8,7 +8,7 @@
   "module": "./dist/esm/examples.js",
   "svelte": {
     "compiler": {
-        "css":  false
+      "css": false
     }
   },
   "files": [
@@ -31,7 +31,7 @@
     "@activewidgets/js": "0.0.9",
     "@rollup/plugin-node-resolve": "^6",
     "express": "^4",
-    "parcel": "^1",
+    "parcel-bundler": "^1",
     "parcel-plugin-markdown": "^0.4",
     "parcel-plugin-svelte": "^4",
     "rimraf": "^3",

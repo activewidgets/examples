@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var Bundler = require('parcel');
+var Bundler = require('parcel-bundler');
 var express = require('express');
 var opn = require('opn');
 
