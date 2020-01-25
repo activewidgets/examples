@@ -1,11 +1,12 @@
 
 <script>
 
+    export let framework;
     export let url;
     export let pages;
 
     let sections = Object.keys(pages).map(name => ({
-        name,
+        name: name == 'Local' ? framework : name,
         items: Object.keys(pages[name]).map(item => ({
             item,
             url: url(name, item)

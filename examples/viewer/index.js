@@ -6,9 +6,9 @@ import readme from '../README.md';
 import logo from './framework.svg';
 import pkg from '../../package.json';
 
-let container = document.getElementById('app');
 
-container.innerHTML = '';
+let framework = 'Javascript',
+    container = document.getElementById('app');
 
 
 function mount(tag, props){
@@ -27,7 +27,10 @@ function clean(){
 }
 
 
+container.innerHTML = '';
+
+
 const viewer = new Viewer({
     target: document.body,
-    props: {pkg, logo, readme, pages, mount, clean}
+    props: {framework, pkg, logo, readme, pages, mount, clean}
 });
