@@ -11,7 +11,9 @@
     let map = {},
         titles = {},
         local = '',
-        readme = '';
+        readme = '',
+        page,
+        title;
 
     Object.keys(pages).forEach(name => {
         Object.keys(pages[name]).forEach(item => {
@@ -20,8 +22,11 @@
         });
     });
 
-    let page = map[current],
-        title = titles[current];
+
+$:{
+    page = map[current],
+    title = titles[current];
+    readme = '';
 
     if (typeof page == 'function'){
         local = '';
@@ -31,6 +36,8 @@
     if (typeof page == 'object'){
         local = '/' + page.path + '/';
     }
+}
+
 
 function adjustFrame(e){
 
@@ -98,6 +105,6 @@ function adjustFrame(e){
 {/if}
 
 
-<main class="page">
-    {@html readme}
-</main>
+{#if !zoom}
+    <main class="page">{@html readme}</main>
+{/if}
