@@ -9,7 +9,9 @@
     export let mount;
 
     let map = {},
-        titles = {};
+        titles = {},
+        local = '',
+        readme = '';
 
     Object.keys(pages).forEach(name => {
         Object.keys(pages[name]).forEach(item => {
@@ -18,12 +20,26 @@
         });
     });
 
-    let fn = map[current],
+    let page = map[current],
         title = titles[current];
 
-    if (fn){
-        fn({mount}, {});
+    if (typeof page == 'function'){
+        local = '';
+        page({mount}, {});
     }
+
+    if (typeof page == 'object'){
+        local = '/' + page.path + '/';
+    }
+
+function adjustFrame(e){
+
+    let frame = document.querySelector('iframe');
+    frame.style.height = frame.contentDocument.documentElement.scrollHeight + 'px';
+
+    readme = page.readme;
+}
+
 
 </script>
 
@@ -42,15 +58,46 @@
     left: 13rem;
 }
 
+.frame-wrap {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    padding: 40px;
+    margin: -40px;
+    box-sizing: content-box;
+}
+
+.frame-wrap > iframe {
+    height: 300px;
+    margin: -40px;
+    border: none;
+}
+
+.page {
+    display: block;
+    max-width: 46rem;
+    margin: 60px auto 0;
+}
+
 </style>
 
 {#if !zoom}
     <div class="title"><h1>{title}</h1></div>
-    <img src={logo} class="fw-logo">
-
+    <img class="fw-logo" src={logo}>
 {/if}
 
-
-{#if !fn}
+{#if !page}
     Not registered
 {/if}
+
+{#if local}
+    <div class="frame-wrap">
+        <iframe src={local} frameborder="0" scrolling="no" on:load={adjustFrame}></iframe>
+    </div>
+{/if}
+
+
+<main class="page">
+    {@html readme}
+</main>
