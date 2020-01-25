@@ -1,4 +1,13 @@
 
+<script>
+
+export let pkg = {};
+
+let version = pkg.version,
+    name = String(pkg.name).split('/')[1];
+
+</script>
+
 <style>
 
 :global(body) {
@@ -18,6 +27,15 @@
     border-bottom: 1px solid #000;
     box-shadow: inset 0 1px #06c, inset 0 2px #666;
     background: #4d4d4d url(https://activewidgets.com/include/patterns/darkdenim-1.png);
+}
+
+.version {
+    position: absolute;
+    top: 0;
+    left: 1.6rem;
+    font: 0.6875rem Tahoma;
+    line-height: 1.625rem;
+    color: #bdf;
 }
 
 .logo {
@@ -67,3 +85,7 @@
         <a href="https://activewidgets.com/licenses/">Store</a>
     </div>
 </header>
+
+<div class="version">
+     {version} ({name})
+</div>

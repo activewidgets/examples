@@ -4,7 +4,7 @@ import {mount as _mount} from '@activewidgets/js';
 import * as pages from '../index.js';
 import readme from '../README.md';
 import logo from './js.svg';
-
+import pkg from '../../package.json';
 
 let container = document.getElementById('app');
 
@@ -29,5 +29,5 @@ function clean(){
 
 const viewer = new Viewer({
     target: document.body,
-    props: {logo, readme, pages, mount, clean}
+    props: {pkg, logo, readme, pages, mount, clean}
 });

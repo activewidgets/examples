@@ -8,6 +8,7 @@
     import Example from './example.svelte';
     import NotFound from './404.svelte';
 
+    export let pkg;
     export let logo;
     export let readme;
     export let pages;
@@ -129,9 +130,8 @@
 </style>
 
 {#if !zoom}
-    <Header />
+    <Header {pkg} />
     <Sidebar {pages} {url} />
 {/if}
 
 <svelte:component this={view} {...props} />
-
