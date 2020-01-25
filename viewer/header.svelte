@@ -27,15 +27,17 @@ let version = pkg.version,
     border-bottom: 1px solid #000;
     box-shadow: inset 0 1px #06c, inset 0 2px #666;
     background: #4d4d4d url(https://activewidgets.com/include/patterns/darkdenim-1.png);
+    z-index: 20;
 }
 
 .version {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 1.6rem;
     font: 0.6875rem Tahoma;
     line-height: 1.625rem;
     color: #bdf;
+    z-index: 21;
 }
 
 .logo {
@@ -71,6 +73,16 @@ let version = pkg.version,
 
 }
 
+.shade {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 0.5rem;
+    margin-top: 1px;
+    background: linear-gradient(#fff, transparent);
+}
+
 </style>
 
 <header class="navbar">
@@ -84,8 +96,10 @@ let version = pkg.version,
         <a href="https://docs.activewidgets.com/api/">API</a>
         <a href="https://activewidgets.com/licenses/">Store</a>
     </div>
+    <div class="shade"></div>
 </header>
 
 <div class="version">
      {version} ({name})
 </div>
+
