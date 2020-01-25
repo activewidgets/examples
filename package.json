@@ -30,12 +30,11 @@
     "express": "^4",
     "opn": "^5",
     "page": "^1",
-    "parcel-bundler": "^1"
+    "parcel-bundler": "^1.12"
   },
   "devDependencies": {
-    "@activewidgets/js": "0.0.9",
+    "@activewidgets/js": "0.0.10",
     "@rollup/plugin-node-resolve": "^6",
-    "parcel-plugin-markdown": "^0.4",
     "parcel-plugin-svelte": "^4",
     "rimraf": "^3",
     "rollup": "^1.20",
