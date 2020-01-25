@@ -1,9 +1,9 @@
 ﻿
 import {Viewer} from '../../viewer/index.js';
 import {mount as _mount} from '@activewidgets/js';
-import * as pages from '../index.js';
+import * as pages from './examples.js';
 import readme from '../README.md';
-import logo from './js.svg';
+import logo from './framework.svg';
 import pkg from '../../package.json';
 
 let container = document.getElementById('app');
