@@ -13,7 +13,8 @@
         local = '',
         readme = '',
         page,
-        title;
+        title,
+        height = 200;
 
     Object.keys(pages).forEach(name => {
         Object.keys(pages[name]).forEach(item => {
@@ -36,6 +37,7 @@ $:{
     }
 
     if (typeof page == 'object'){
+        height = 200;
         local = '/' + page.path + '/';
     }
 }
@@ -44,7 +46,7 @@ $:{
 function adjustFrame(e){
 
     let frame = document.querySelector('iframe');
-    frame.style.height = frame.contentDocument.documentElement.scrollHeight + 'px';
+    height = frame.contentDocument.documentElement.scrollHeight;
 
     readme = page.readme;
 }
@@ -133,7 +135,7 @@ function adjustFrame(e){
 
 {#if local}
     <div class="frame-wrap">
-        <iframe src={local} frameborder="0" scrolling="no" on:load={adjustFrame}></iframe>
+        <iframe src={local} style="height:{height}px" frameborder="0" scrolling="no" on:load={adjustFrame}></iframe>
     </div>
 {/if}
 
