@@ -15,6 +15,7 @@
     "bin",
     "data",
     "dist",
+    "flags",
     "northwind",
     "viewer"
   ],
@@ -44,7 +45,9 @@
     "svelte": "^3"
   },
   "alias": {
-    "@activewidgets/examples/northwind": "./northwind"
+    "@activewidgets/examples/northwind": "./northwind",
+    "@activewidgets/examples/data": "./data",
+    "@activewidgets/examples/flags": "./flags"
   },
   "browserslist": [
     "last 1 chrome versions"

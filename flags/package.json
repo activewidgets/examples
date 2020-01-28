@@ -1,0 +1,6 @@
+{
+  "name": "@activewidgets/examples/flags",
+  "main": "index.common.js",
+  "module": "index.module.js",
+  "private": true
+}

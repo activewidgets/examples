@@ -1,0 +1,22 @@
+
+exports.Argentina = require('./Argentina.png');
+exports.Austria = require('./Austria.png');
+exports.Belgium = require('./Belgium.png');
+exports.Brazil = require('./Brazil.png');
+exports.Canada = require('./Canada.png');
+exports.Denmark = require('./Denmark.png');
+exports.Finland = require('./Finland.png');
+exports.France = require('./France.png');
+exports.Germany = require('./Germany.png');
+exports.Ireland = require('./Ireland.png');
+exports.Italy = require('./Italy.png');
+exports.Mexico = require('./Mexico.png');
+exports.Norway = require('./Norway.png');
+exports.Poland = require('./Poland.png');
+exports.Portugal = require('./Portugal.png');
+exports.Spain = require('./Spain.png');
+exports.Sweden = require('./Sweden.png');
+exports.Switzerland = require('./Switzerland.png');
+exports.UK = require('./United-Kingdom.png');
+exports.USA = require('./United-States.png');
+exports.Venezuela = require('./Venezuela.png');
