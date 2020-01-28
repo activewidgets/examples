@@ -89,6 +89,37 @@ function adjustFrame(e){
     margin: 20px auto 0;
 }
 
+:global(code), :global(pre) {
+    color: #ccc;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 1em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+:global(pre) {
+    display: block;
+    position: relative;
+    overflow: auto;
+    background-color: #282c34;
+    border-radius: 6px;
+    line-height: 1.4;
+    padding: 1.25rem 1.5rem;
+    margin: 0.85rem 0;
+}
+
+
 </style>
 
 {#if !zoom}
