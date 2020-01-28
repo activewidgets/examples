@@ -77,8 +77,8 @@
 }
 
 :global(body) {
-    padding-right: 40px;
-    padding-bottom: 40px;
+    padding-right: 60px;
+    padding-bottom: 60px;
     margin: 0;
     font-family: 'Nunito Sans', 'Segoe UI', 'Avenir', 'Helvetica Neue', 'Tahoma', sans-serif;
     color: #333;

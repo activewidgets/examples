@@ -59,14 +59,14 @@ function adjustFrame(e){
 .fw-logo {
     position: absolute;
     top: 6.3rem;
-    right: 40px;
+    right: 60px;
     height: 3rem;
 }
 
 .title {
     position: absolute;
     top: 4.5rem;
-    left: 13rem;
+    left: 16rem;
 }
 
 .frame-wrap {

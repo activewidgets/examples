@@ -18,7 +18,7 @@
 <style>
 
 :global(body) {
-    padding-left: 200px;
+    padding-left: 250px;
 }
 
 .sidebar {
@@ -26,7 +26,7 @@
     top: 100px;
     left: 0;
     bottom: 0;
-    width: 200px;
+    width: 250px;
     padding: 20px;
     font-size: 11pt;
 }
