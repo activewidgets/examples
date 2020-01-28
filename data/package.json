@@ -1,6 +1,6 @@
 {
   "name": "@activewidgets/examples/data",
-  "main": "./common.js",
-  "module": "./module.js",
+  "main": "index.common.js",
+  "module": "index.module.js",
   "private": true
 }
