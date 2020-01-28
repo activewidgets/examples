@@ -28,7 +28,7 @@
         props = {readme};
     });
 
-    page('/examples/:section/:item', ({params}) => {
+    page('/examples/:section/:item/', ({params}) => {
         view = Example;
         props = {mount, pages, url, logo, zoom, current: url(params.section, params.item)};
     });
@@ -39,7 +39,7 @@
         next();
     });
 
-    page('/test/:section/:item', ({params}) => {
+    page('/test/:section/:item/', ({params}) => {
         document.body.style.padding = '60px';
         zoom = true;
         view = Example;

@@ -17,8 +17,9 @@
 
     Object.keys(pages).forEach(name => {
         Object.keys(pages[name]).forEach(item => {
-            map[url(name, item)] = pages[name][item];
-            titles[url(name, item)] = item;
+            let key = url(name, pages[name][item].path || item);
+            map[key] = pages[name][item];
+            titles[key] = item;
         });
     });
 

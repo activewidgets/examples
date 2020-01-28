@@ -9,7 +9,7 @@
         name: name == 'Local' ? framework : name,
         items: Object.keys(pages[name]).map(item => ({
             item,
-            url: url(name, item)
+            url: url(name, pages[name][item].path || item)
         }))
     }));
 
@@ -51,7 +51,7 @@
     {#each sections as {name, items}}
         <div class="menu-header">{name}</div>
         {#each items as {item, url}}
-            <div class="menu-item"><a href="/examples/{url}">{item}</a></div>
+            <div class="menu-item"><a href="/examples/{url}/">{item}</a></div>
         {/each}
     {/each}
 </aside>
