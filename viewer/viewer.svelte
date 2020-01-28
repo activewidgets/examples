@@ -4,7 +4,6 @@
     import page from 'page';
     import Header from './header.svelte';
     import Sidebar from './sidebar.svelte';
-    import Home from './home.svelte';
     import Example from './example.svelte';
     import NotFound from './404.svelte';
 
@@ -24,8 +23,13 @@
 
 
     page('/', () => {
-        view = Home;
-        props = {readme};
+        view = Example;
+        props = {mount, pages, url, logo, zoom, framework, readme};
+    });
+
+    page.exit('/', (ctx, next) => {
+        clean();
+        next();
     });
 
     page('/examples/:section/:item/', ({params}) => {
@@ -34,7 +38,6 @@
     });
 
     page.exit('/examples/*', (ctx, next) => {
-        console.log('exit');
         clean();
         next();
     });

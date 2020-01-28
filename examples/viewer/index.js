@@ -2,7 +2,7 @@
 import {Viewer} from '../../viewer/index.js';
 import {mount as _mount} from '@activewidgets/js';
 import * as pages from './examples.js';
-import readme from '../README.md';
+import readme from '../demo/README.md';
 import logo from './framework.svg';
 import pkg from '../../package.json';
 

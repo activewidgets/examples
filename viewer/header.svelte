@@ -86,8 +86,8 @@ let version = pkg.version,
 </style>
 
 <header class="navbar">
-    <a href="/" class="home-link">
-        <img src="https://activewidgets.com/include/logo/aw-logo-40.png" class="logo">
+    <a href="https://activewidgets.com/" class="home-link">
+        <img src="https://activewidgets.com/include/logo/aw-logo-40.png" class="logo" alt="home">
     </a>
     <div class="links">
         <a href="https://activewidgets.com/messages/">Forum</a>

@@ -1,0 +1,105 @@
+
+body {
+    margin: 60px;
+    font: 14px/1.2143 'Segoe UI', 'Avenir', 'Helvetica Neue', 'Tahoma', sans-serif;
+}
+
+.ax-headers-view {
+    font-weight: bold;
+    color: #666;
+    border-bottom: 1px solid #aaa;
+}
+
+.ax-gridlines {
+    border-bottom: 1px solid #eee;
+}
+
+.line {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.small {
+    font-size: 13px;
+    line-height: 1.308;
+    color: #444;
+}
+
+.bold {
+    font-weight: bold;
+    color: #666;
+}
+
+.blue {
+    color: #369;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.country > img {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    margin: 0px 10px;
+}
+
+.line.phone:before {
+    content: '\260E';
+    color: #666;
+    margin-right: 10px;
+}
+
+.line.fax:before {
+    content: 'fax';
+    color: #666;
+    margin-right: 10px;
+    font-size: 11px;
+}
+
+.circle {
+    position: relative;
+    overflow: visible;
+}
+
+.circle .line span {
+    font-weight: bold;
+    color: #900;
+}
+
+.circle:after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    bottom: -15px;
+    left: -30px;
+    width: 180px;
+    border: 2px dotted red;
+    border-radius: 100px;
+    background: rgba(255, 0, 0, 0.03);
+}
+
+
+.star .line.small {
+    overflow: visible;
+}
+
+.star .line.small:after {
+    content: '\2605';
+    display: inline-block;
+    margin: -1em 5px;
+    font-size: 2em;
+    color: #fb0;
+    text-shadow: 1px 1px 2px #333;
+    vertical-align: -3px;
+}
+
+.bg-1 {
+    background: #f4f4f4;
+}
+
+.bg-2 {
+    background: rgba(0, 255, 0, 0.05);
+}

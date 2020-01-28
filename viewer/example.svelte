@@ -7,11 +7,13 @@
     export let pages;
     export let current;
     export let mount;
+    export let framework;
+    export let readme;
 
     let map = {},
         titles = {},
         local = '',
-        readme = '',
+        notes = '',
         page,
         title,
         height = 200;
@@ -26,14 +28,20 @@
 
 
 $:{
-    page = map[current],
-    title = titles[current];
-    readme = '';
+    if (current){
+        page = map[current],
+        title = titles[current];
+        notes = '';
+    }
+    else {
+        page = {path: 'demo', readme};
+        title = framework + ' Examples';
+    }
 
     if (typeof page == 'function'){
         local = '';
         page({mount}, {});
-        readme = '<p>xxx</p>';
+        notes = '';
     }
 
     if (typeof page == 'object'){
@@ -48,7 +56,7 @@ function adjustFrame(e){
     let frame = document.querySelector('iframe');
     height = frame.contentDocument.documentElement.scrollHeight;
 
-    readme = page.readme;
+    notes = page.readme;
 }
 
 
@@ -88,7 +96,7 @@ function adjustFrame(e){
 .page {
     display: block;
     max-width: 46rem;
-    margin: 20px auto 0;
+    margin: 40px auto 0;
 }
 
 :global(code), :global(pre) {
@@ -126,7 +134,7 @@ function adjustFrame(e){
 
 {#if !zoom}
     <div class="title"><h1>{title}</h1></div>
-    <img class="fw-logo" src={logo}>
+    <img class="fw-logo" src={logo} alt="logo">
 {/if}
 
 {#if !page}
@@ -135,11 +143,11 @@ function adjustFrame(e){
 
 {#if local}
     <div class="frame-wrap">
-        <iframe src={local} style="height:{height}px" frameborder="0" scrolling="no" on:load={adjustFrame}></iframe>
+        <iframe src={local} style="height:{height}px" frameborder="0" scrolling="no" on:load={adjustFrame} title="example"></iframe>
     </div>
 {/if}
 
 
 {#if !zoom}
-    <main class="page">{@html readme}</main>
+    <main class="page">{@html notes}</main>
 {/if}
