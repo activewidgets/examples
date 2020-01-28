@@ -31,6 +31,7 @@ $:{
     if (typeof page == 'function'){
         local = '';
         page({mount}, {});
+        readme = '<p>xxx</p>';
     }
 
     if (typeof page == 'object'){
@@ -61,7 +62,7 @@ function adjustFrame(e){
 
 .title {
     position: absolute;
-    top: 5.5rem;
+    top: 4.5rem;
     left: 13rem;
 }
 
@@ -70,21 +71,21 @@ function adjustFrame(e){
     flex-direction: column;
     position: relative;
     width: 100%;
-    padding: 40px;
-    margin: -40px;
+    padding: 60px;
+    margin: -60px;
     box-sizing: content-box;
 }
 
 .frame-wrap > iframe {
-    height: 300px;
-    margin: -40px;
+    height: 200px;
+    margin: -60px;
     border: none;
 }
 
 .page {
     display: block;
     max-width: 46rem;
-    margin: 60px auto 0;
+    margin: 20px auto 0;
 }
 
 </style>

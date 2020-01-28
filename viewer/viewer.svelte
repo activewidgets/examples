@@ -72,36 +72,45 @@
     padding: 0;
     margin: 0;
     font-family: Arial, sans-serif;
-    font-size: 12pt;
-    line-height: 1.4375;
+    font-size: 16px;
+    line-height: 1.25;
 }
 
 :global(body) {
     padding-right: 40px;
     padding-bottom: 40px;
     margin: 0;
-    font-family: 'Nunito Sans', 'Segoe UI', 'Helvetica Neue', 'Arial', sans-serif;
+    font-family: 'Nunito Sans', 'Segoe UI', 'Avenir', 'Helvetica Neue', 'Tahoma', sans-serif;
     color: #333;
 }
 
 :global(h1), :global(h2), :global(h3) {
-    font-family: 'Montserrat', 'MS Reference Sans Serif', 'Helvetica Neue', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'MS Reference Sans Serif', 'Lucida Grande', 'Arial', sans-serif;
     font-weight: 600;
+    padding-top: 1em;
+    margin-top: 1em;
+    margin-bottom: 0;
 }
 
 :global(h1) {
-    font-size: 2em;
+    font-size: 225%;
     color: #08e;
 }
 
+:global(h1:first-child) {
+    padding-top: 0;
+}
+
+
 :global(h2) {
     border-bottom: 4px solid #0a0;
-    font-size: 1.4em;
+    font-size: 150%;
     color: #555;
+    margin-bottom: 1em;
 }
 
 :global(h3) {
-    font-size: 1.2em;
+    font-size: 125%;
     color: #777;
 }
 
@@ -111,12 +120,19 @@
     margin-right: 0.5em;
 }
 
+:global(p), :global(ul), :global(ol) {
+    line-height: 1.625;
+}
+
 :global(#app) {
     width: 100%;
-    font-family: 'Segoe UI', 'Helvetica Neue', 'Arial', sans-serif;
-    font-size: 13px;
+    font: 14px/1.2143 'Segoe UI', 'Avenir', 'Helvetica Neue', 'Tahoma', sans-serif;
     color: #000;
  }
+
+:global(.ax-datagrid) {
+    max-height: 300px;
+}
 
 :global(.ax-headers-view) {
     font-weight: bold;

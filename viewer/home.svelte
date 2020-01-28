@@ -8,7 +8,7 @@
 .page {
     display: block;
     max-width: 46rem;
-    margin: -4rem auto 0;
+    margin: -5rem auto 0;
 }
 
 </style>
