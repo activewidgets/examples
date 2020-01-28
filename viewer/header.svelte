@@ -65,7 +65,7 @@ let version = pkg.version,
 }
 
 .links a:hover {
-    border-bottom: 3px solid #fff;
+    border-bottom: 3px solid #999;
 }
 
 .links a.active {
@@ -91,7 +91,7 @@ let version = pkg.version,
     </a>
     <div class="links">
         <a href="https://activewidgets.com/messages/">Forum</a>
-        <a href="#" class="active">Demo</a>
+        <a href="https://docs.activewidgets.com/examples/" class="active">Demo</a>
         <a href="https://docs.activewidgets.com/guide/">Guide</a>
         <a href="https://docs.activewidgets.com/api/">API</a>
         <a href="https://activewidgets.com/licenses/">Store</a>
