@@ -1,4 +1,6 @@
 
+[Open fullscreen](/demo/) | [Source on github](https://github.com/activewidgets/react/tree/master/examples/demo) | [Edit on Codesandbox](https://codesandbox.io/s/github/activewidgets/react/tree/master/examples/demo)
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget metus sed quam ultrices porttitor. Nullam ut dolor sit amet nisi auctor volutpat. Etiam eget tincidunt ex. Donec varius dignissim sem, sed posuere nisl feugiat commodo. Vivamus nec metus blandit, molestie turpis ut, interdum tellus. Etiam vel libero non enim volutpat sagittis quis et ante. Ut vehicula sit amet ex vitae consectetur. Vestibulum venenatis auctor augue, non facilisis mi cursus et. Curabitur nunc libero, convallis nec sapien eu, egestas convallis eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis tempus vulputate faucibus.
 
 ## Readme file

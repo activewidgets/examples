@@ -95,8 +95,10 @@ function adjustFrame(e){
 
 .page {
     display: block;
+    position: relative;
     max-width: 46rem;
     margin: 40px auto 0;
+    z-index: 1;
 }
 
 :global(code), :global(pre) {

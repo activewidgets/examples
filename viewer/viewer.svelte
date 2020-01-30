@@ -56,11 +56,6 @@
         next();
     });
 
-    page('*', () => {
-        view = NotFound;
-        props = null;
-    });
-
     page.start();
 
 </script>
