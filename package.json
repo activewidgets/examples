@@ -1,6 +1,6 @@
 {
   "name": "@activewidgets/examples",
-  "version": "0.0.5",
+  "version": "0.0.4",
   "description": "Examples viewer",
   "author": "ActiveWidgets SARL",
   "license": "MIT",
@@ -16,7 +16,6 @@
     "data",
     "dist",
     "flags",
-    "northwind",
     "viewer"
   ],
   "bin": {
