@@ -55,8 +55,15 @@ function adjustFrame(e){
 
     let frame = document.querySelector('iframe');
     height = frame.contentDocument.documentElement.scrollHeight;
-
     notes = page.readme;
+
+    setTimeout(() => {
+        height = frame.contentDocument.documentElement.scrollHeight;
+    }, 100);
+
+    setTimeout(() => {
+        height = frame.contentDocument.documentElement.scrollHeight;
+    }, 300);
 }
 
 
