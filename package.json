@@ -28,15 +28,15 @@
     "start": "node bin/serve-examples.js"
   },
   "dependencies": {
+    "page": "^1"
+  },
+  "devDependencies": {
+    "@activewidgets/js": "3.0.0",
+    "@rollup/plugin-node-resolve": "^6",
     "express": "^4",
     "marked": "^0.8",
     "opn": "^5",
-    "page": "^1",
-    "parcel-bundler": "^1.12"
-  },
-  "devDependencies": {
-    "@activewidgets/js": "0.0.10",
-    "@rollup/plugin-node-resolve": "^6",
+    "parcel-bundler": "^1.12",
     "parcel-plugin-svelte": "^4",
     "rimraf": "^3",
     "rollup": "^1.20",
@@ -45,7 +45,6 @@
     "svelte": "^3"
   },
   "alias": {
-    "@activewidgets/examples/northwind": "./northwind",
     "@activewidgets/examples/data": "./data",
     "@activewidgets/examples/flags": "./flags"
   },

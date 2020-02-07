@@ -21,15 +21,15 @@ function onRow(row){
 
     const {data, cells} = row;
 
-    if (data.country == 'France'){
+    if (data.country === 'France'){
         row.class = 'bg-2';
     }
 
-    if (data.city == 'London'){
+    if (data.city === 'London'){
         cells.address = {class: 'circle'};
     }
 
-    if (data.contactTitle == 'Owner'){
+    if (data.contactTitle === 'Owner'){
         cells.contact = {class: 'star'};
     }
 }
