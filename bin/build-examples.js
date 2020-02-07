@@ -10,6 +10,8 @@ var options = {
     autoInstall: false
 };
 
+process.env.NODE_ENV = 'production';
+
 var bundler = new Bundler(files, options);
 
 bundler.bundle();
