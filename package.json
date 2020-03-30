@@ -1,16 +1,11 @@
 {
   "name": "@activewidgets/examples",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Examples viewer",
   "author": "ActiveWidgets SARL",
   "license": "MIT",
   "main": "./dist/umd/examples.js",
   "module": "./dist/esm/examples.js",
-  "svelte": {
-    "compiler": {
-      "css": false
-    }
-  },
   "files": [
     "bin",
     "data",
