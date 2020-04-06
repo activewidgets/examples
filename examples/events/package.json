@@ -1,7 +1,7 @@
 {
-  "name": "js-hello-world",
+  "name": "js-events",
   "version": "1.0.0",
-  "description": "Hello World - ActiveWidgets/JS",
+  "description": "User events - ActiveWidgets/JS",
   "license": "MIT",
   "main": "src/index.js",
   "scripts": {
@@ -9,6 +9,7 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
+    "@activewidgets/examples": "*",
     "@activewidgets/js": "*"
   },
   "devDependencies": {

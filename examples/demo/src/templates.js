@@ -1,41 +1,41 @@
+/**
+ * Copyright (c) ActiveWidgets SARL. All Rights Reserved.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
 import { tpl } from "@activewidgets/js";
 import * as flags from '@activewidgets/examples/flags';
 
 
-export function company({value}){
+export function company({data}){
     return tpl`<div>
-        <div class="line bold blue">${value.customerID}</div>
-        <div class="line small">${value.companyName}</div>
+        <div class="bold blue">${data.customerID}</div>
+        <div class="small">${data.companyName}</div>
     </div>`;
 }
 
-
-export function contact({value}){
+export function contact({data}){
     return tpl`<div>
-        <div class="line bold">${value.contactName}</div>
-        <div class="line small">${value.contactTitle}</div>
+        <div class="bold">${data.contactName}</div>
+        <div class="small">${data.contactTitle}</div>
     </div>`;
 }
 
-
-export function address({value}){
+export function address({data}){
     return tpl`<div>
-        <div class="line small">${value.address}</div>
-        <div class="line small">${value.postalCode} <span>${value.city}</span></div>
+        <div class="small">${data.address}</div>
+        <div class="small">${data.postalCode} <span>${data.city}</span></div>
     </div>`;
 }
 
-
-export function country({value}){
-    const src = flags[value];
-    return tpl`<div class="country"><img src=${src}/>${value}</div>`;
+export function country({text}){
+    return tpl`<div><img src=${flags[text]}/>${text}</div>`;
 }
 
-
-export function phone({value}){
+export function phone({data}){
     return tpl`<div>
-        <div class="line small phone">${value.phone}</div>
-        <div class="line small fax">${value.fax}</div>
+        <div class="small phone">${data.phone}</div>
+        <div class="small fax">${data.fax}</div>
     </div>`;
 }

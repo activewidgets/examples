@@ -1,16 +1,24 @@
+/**
+ * Copyright (c) ActiveWidgets SARL. All Rights Reserved.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
 import { mount} from "@activewidgets/js";
-import { northwind } from "@activewidgets/examples/data";
+import { northwind } from '@activewidgets/examples/data';
 import * as templates from './templates';
-import "./styles.css";
+import options from './options';
+import './styles.css';
 
 
 const columns = [
-    { header: "Company", template: "company", width: 200, fixed: true},
-    { header: "Contact", template: "contact", width: 200, class: 'bg-1', key: 'contact'},
-    { header: "Address", template: "address", width: 200, key: 'address' },
-    { header: "Country", template: 'country', width: 170, field: "country" },
-    { header: "Phone/Fax", template: 'phone', width: 150}
+    { header: 'Company', template: 'company', fixed: true },
+    { header: 'Contact', template: 'contact', style: 'background:#f4f4f4', key: 'contact' },
+    { header: 'Address', template: 'address', key: 'address' },
+    { header: 'Country', type: 'country flag', field: 'country' },
+    { header: 'Phone/Fax', type: 'phone & fax'},
+    { header: 'Last Order', type: 'money', field: 'amount' },
+    { header: 'Order Date', type: 'date', field: 'date' }
 ];
 
 
@@ -21,10 +29,17 @@ function onRow(row){
 
     const {data, cells} = row;
 
+    // calculated values
+    cells.amount = 2000 * Math.random();
+    cells.date = Date.now() - 500 * 86400000 * Math.random();
+
+
+    // dynamic row style
     if (data.country === 'France'){
-        row.class = 'bg-2';
+        row.class = 'bg-green';
     }
 
+    // dynamic cell styles
     if (data.city === 'London'){
         cells.address = {class: 'circle'};
     }
@@ -35,4 +50,4 @@ function onRow(row){
 }
 
 
-mount('ax-datagrid', {columns, rows, templates, onRow});
+mount('ax-datagrid', {columns, rows, templates, options, onRow});

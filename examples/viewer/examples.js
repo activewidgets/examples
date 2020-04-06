@@ -1,11 +1,21 @@
-﻿
+﻿/**
+ * Copyright (c) ActiveWidgets SARL. All Rights Reserved.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 import hello_world from '../hello-world/README.md';
-import get_started from '../get-started/README.md';
+import cdn_es5 from '../cdn-es5/README.md';
+import columns from '../columns/README.md';
+import events from '../events/README.md';
 
 
 export const Local = {
-    'Hello, Worlld!': {path: 'hello-world', readme: hello_world},
-    'Get started': {path: 'get-started', readme: get_started}
+    'Hello, World!': {path: 'hello-world', readme: hello_world},
+    'CDN (no build)': {path: 'cdn-es5', readme: cdn_es5},
+    'Columns, rows': {path: 'columns', readme: columns},
+    'User events': {path: 'events', readme: events}
 };
+
 
 

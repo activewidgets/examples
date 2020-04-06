@@ -1,7 +1,18 @@
+/**
+ * Copyright (c) ActiveWidgets SARL. All Rights Reserved.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
 body {
     margin: 60px;
     font: 14px/1.2143 'Segoe UI', 'Avenir', 'Helvetica Neue', 'Tahoma', sans-serif;
+}
+
+
+.ax-datagrid {
+    height: calc(100vh - 120px);
+    min-height: 400px;
 }
 
 .ax-headers-view {
@@ -14,10 +25,21 @@ body {
     border-bottom: 1px solid #eee;
 }
 
-.line {
+.ax-cell:hover {
+    background: rgba(0,127,255,0.1);
+}
+
+.ax-cell > div {
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.ax-cell > img {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    margin: 0px 10px;
 }
 
 .small {
@@ -39,20 +61,13 @@ body {
     font-style: italic;
 }
 
-.country > img {
-    width: 32px;
-    height: 32px;
-    vertical-align: middle;
-    margin: 0px 10px;
-}
-
-.line.phone:before {
+.phone:before {
     content: '\260E';
     color: #666;
     margin-right: 10px;
 }
 
-.line.fax:before {
+.fax:before {
     content: 'fax';
     color: #666;
     margin-right: 10px;
@@ -64,7 +79,7 @@ body {
     overflow: visible;
 }
 
-.circle .line span {
+.circle span {
     font-weight: bold;
     color: #900;
 }
@@ -82,11 +97,11 @@ body {
 }
 
 
-.star .line.small {
+.star .small {
     overflow: visible;
 }
 
-.star .line.small:after {
+.star .small:after {
     content: '\2605';
     display: inline-block;
     margin: -1em 5px;
@@ -96,10 +111,6 @@ body {
     vertical-align: -3px;
 }
 
-.bg-1 {
-    background: #f4f4f4;
-}
-
-.bg-2 {
+.bg-green {
     background: rgba(0, 255, 0, 0.05);
 }

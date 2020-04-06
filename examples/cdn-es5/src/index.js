@@ -4,13 +4,12 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { mount } from "@activewidgets/js";
-import './styles.css';
+var mount = ActiveWidgets.JS.mount;
 
 
-const rows = [
-    { message: 'Hello, World!' }
+var rows = [
+    { framework: 'none', source: 'CDN', language: 'ES5'}
 ];
 
 
-mount('ax-datagrid', {rows});
+mount('ax-datagrid', {rows: rows});
