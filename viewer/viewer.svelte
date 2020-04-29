@@ -129,7 +129,7 @@
  }
 
 :global(.ax-datagrid) {
-    max-height: 300px;
+    height: 200px;
 }
 
 :global(.ax-headers-view) {

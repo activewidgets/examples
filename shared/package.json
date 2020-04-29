@@ -1,0 +1,5 @@
+{
+  "name": "@activewidgets/examples/shared",
+  "main": "index.js",
+  "private": true
+}

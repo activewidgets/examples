@@ -41,7 +41,7 @@ $:{
     if (typeof page == 'function'){
         local = '';
         page({mount}, {});
-        notes = '';
+        notes = page.notes || '';
     }
 
     if (typeof page == 'object'){
