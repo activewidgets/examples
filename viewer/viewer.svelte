@@ -50,7 +50,7 @@
     });
 
     page.exit('/test/*', (ctx, next) => {
-        document.body.style.padding = undefined;
+        document.body.style.padding = '';
         zoom = false;
         clean();
         next();
