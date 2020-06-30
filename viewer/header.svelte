@@ -6,14 +6,30 @@ export let pkg = {};
 let version = pkg.version,
     name = String(pkg.name).split('/')[1];
 
+
+function click(event){
+    if (document.body.offsetWidth > 899){
+        return;
+    }
+    event.preventDefault();
+
+    let el = document.querySelector('.sidebar'),
+        visible = window.getComputedStyle(el).display == 'block';
+
+    el.style.display = visible ? 'none' : 'block';
+}
+
 </script>
 
 <style>
 
 :global(body) {
-    padding-top: 10.5rem;
+    padding-top: 12rem;
 }
 
+:global(@media (max-width: 899px) { body {
+    padding-top: 10rem;
+}})
 
 .navbar {
     position: fixed;
@@ -29,6 +45,7 @@ let version = pkg.version,
     background: #4d4d4d url(https://activewidgets.com/include/patterns/darkdenim-1.png);
     z-index: 20;
 }
+
 
 .version {
     position: fixed;
@@ -83,10 +100,24 @@ let version = pkg.version,
     background: linear-gradient(#fff, transparent);
 }
 
+
+@media (max-width: 899px) {
+    .navbar {
+        border-top: none;
+        background: #4d4d4d;
+        height: 3.5rem;
+    }
+
+    .version, .links, .shade {
+        display: none;
+    }
+}
+
+
 </style>
 
 <header class="navbar">
-    <a href="https://activewidgets.com/" class="home-link">
+    <a href="https://activewidgets.com/" class="home-link" on:click={click}>
         <img src="https://activewidgets.com/include/logo/aw-logo-40.png" class="logo" alt="home">
     </a>
     <div class="links">

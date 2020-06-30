@@ -75,14 +75,34 @@ function adjustFrame(e){
     position: absolute;
     top: 6.3rem;
     right: 60px;
-    height: 3rem;
+    height: 4rem;
 }
+
+@media (max-width: 899px) { .fw-logo {
+    top: 4.5rem;
+    right: 20px;
+}}
 
 .title {
     position: absolute;
-    top: 4.5rem;
+    top: 10.5rem;
     left: 16rem;
+    right: 125px;
 }
+
+.title h1 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+@media (max-width: 899px) { .title {
+    font-size: 89%;
+    top: 9rem;
+    left: 25px;
+    right: 85px;
+}}
 
 .frame-wrap {
     display: flex;
@@ -94,11 +114,20 @@ function adjustFrame(e){
     box-sizing: content-box;
 }
 
+@media (max-width: 1109px) { .frame-wrap {
+    padding: 20px;
+    margin: -20px;
+}}
+
 .frame-wrap > iframe {
     height: 200px;
     margin: -60px;
     border: none;
 }
+
+@media (max-width: 1109px) { .frame-wrap > iframe {
+    margin: -20px;
+}}
 
 .page {
     display: block;
@@ -142,8 +171,8 @@ function adjustFrame(e){
 </style>
 
 {#if !zoom}
-    <div class="title"><h1>{title}</h1></div>
     <img class="fw-logo" src={logo} alt="logo">
+    <div class="title"><h1>{title}</h1></div>
 {/if}
 
 {#if !page}

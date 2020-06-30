@@ -98,6 +98,11 @@ ga('create', 'UA-35823479-1', 'auto');
     color: #333;
 }
 
+:global(@media (max-width: 899px) { body {
+    padding-right: 20px;
+    padding-bottom: 20px;
+}})
+
 :global(h1), :global(h2), :global(h3) {
     font-family: 'Montserrat', 'MS Reference Sans Serif', 'Lucida Grande', 'Arial', sans-serif;
     font-weight: 600;
