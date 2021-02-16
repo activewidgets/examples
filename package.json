@@ -28,17 +28,20 @@
   },
   "devDependencies": {
     "@activewidgets/js": "^3",
-    "@rollup/plugin-node-resolve": "^6",
+    "@activewidgets/options": "^3",
+    "@rollup/plugin-alias": "^3",
+    "@rollup/plugin-babel": "^5",
+    "@rollup/plugin-node-resolve": "^11",
     "express": "^4",
-    "marked": "^0.8",
-    "opn": "^5",
+    "marked": "^2",
+    "open": "^7",
     "parcel-bundler": "^1.12",
     "parcel-plugin-svelte": "^4",
     "rimraf": "^3",
-    "rollup": "^1.20",
-    "rollup-plugin-babel": "^4",
-    "rollup-plugin-svelte": "^5",
-    "svelte": "^3"
+    "rollup": "^2",
+    "rollup-plugin-md": "^1",
+    "rollup-plugin-svelte": "^7",
+    "svelte": "3.29.4"
   },
   "alias": {
     "@activewidgets/examples": "./viewer/index.js",

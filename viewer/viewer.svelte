@@ -17,6 +17,7 @@ ga('create', 'UA-35823479-1', 'auto');
     import Sidebar from './sidebar.svelte';
     import Example from './example.svelte';
     import NotFound from './404.svelte';
+    import * as shared from '../shared/index.js';
 
     export let framework;
     export let pkg;
@@ -25,6 +26,8 @@ ga('create', 'UA-35823479-1', 'auto');
     export let pages;
     export let mount;
     export let clean;
+
+    let allPages = Object.assign({}, pages, shared);
 
     let view, props, zoom;
 
@@ -40,7 +43,7 @@ ga('create', 'UA-35823479-1', 'auto');
 
     page('/', () => {
         view = Example;
-        props = {mount, pages, url, logo, zoom, framework, readme};
+        props = {mount, pages: allPages, url, logo, zoom, framework, readme};
     });
 
     page.exit('/', (ctx, next) => {
@@ -50,7 +53,7 @@ ga('create', 'UA-35823479-1', 'auto');
 
     page('/examples/:section/:item/', ({params}) => {
         view = Example;
-        props = {mount, pages, url, logo, zoom, current: url(params.section, params.item)};
+        props = {mount, pages: allPages, url, logo, zoom, current: url(params.section, params.item)};
     });
 
     page.exit('/examples/*', (ctx, next) => {
@@ -62,7 +65,7 @@ ga('create', 'UA-35823479-1', 'auto');
         document.body.style.padding = '60px';
         zoom = true;
         view = Example;
-        props = {mount, pages, url, zoom, current: url(params.section, params.item)};
+        props = {mount, pages: allPages, url, zoom, current: url(params.section, params.item)};
     });
 
     page.exit('/test/*', (ctx, next) => {
@@ -167,7 +170,7 @@ ga('create', 'UA-35823479-1', 'auto');
 
 {#if !zoom}
     <Header {pkg} />
-    <Sidebar {framework} {pages} {url} />
+    <Sidebar {framework} pages={allPages} {url} />
 {/if}
 
 <svelte:component this={view} {...props} />
