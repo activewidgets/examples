@@ -1,13 +1,12 @@
 {
   "name": "@activewidgets/examples",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Examples viewer",
   "author": "ActiveWidgets SARL",
   "license": "MIT",
   "main": "./dist/umd/examples.js",
   "module": "./dist/esm/examples.js",
   "files": [
-    "bin",
     "data",
     "dist",
     "flags",
@@ -17,6 +16,7 @@
   "scripts": {
     "build": "rimraf dist/* && rollup -c",
     "examples": "npm run build && vite build",
+    "prepack": "npm run build && rimraf out/*",
     "preview": "npm run examples && vite preview --open /",
     "start": "vite --open /"
   },
