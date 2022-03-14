@@ -4,7 +4,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { intl, format, column, type } from "@activewidgets/options";
+import { intl, format, column, type, row, cell } from "@activewidgets/options";
 
 
 export default [
@@ -23,5 +23,24 @@ export default [
     type('country flag', {template: 'country', width: 170}),
     type('phone & fax', {template: 'phone', width: 150}),
     type('money', {format: 'money', width: 100, align: 'right'}),
-    type('date', {format: 'date', width: 150, align: 'right'})
+    type('date', {format: 'date', width: 150, align: 'right'}),
+
+    // customize row
+    row(data => {
+        if (data.country == 'France'){
+            return {class:'bg-green'};
+        }
+    }),
+
+    // customize cells
+    cell((value, data, column) => {
+
+        if (data.city == 'London' && column.key == 'address'){
+            return {class: 'circle'};
+        }
+
+        if (data.contactTitle == 'Owner' && column.key == 'contact'){
+            return {class: 'star'};
+        }
+    })
 ];

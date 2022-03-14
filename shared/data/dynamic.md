@@ -5,11 +5,13 @@
 ```js
 const rows = 100;
 
-function onRow(row){
-    row.cells.random = (1000 * Math.random()).toFixed(2);
+function calc(){
+    return {
+        random: (1000 * Math.random()).toFixed(2)
+    };
 }
 
 const columns = [
-    { header: 'Random', key: 'random' }
+    { header: 'Random', field: 'random' }
 ];
 ```

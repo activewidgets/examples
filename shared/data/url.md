@@ -3,12 +3,5 @@
 
 
 ```js
-import { http } from "@activewidgets/options";
-import { columns } from "@activewidgets/examples/data";
-
-const options = [
-    http()
-];
-
 const rows = 'https://cdn.activewidgets.com/demo/customers.json';
 ```

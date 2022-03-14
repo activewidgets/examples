@@ -14,14 +14,11 @@
     "shared",
     "viewer"
   ],
-  "bin": {
-    "build-examples": "bin/build-examples.js",
-    "serve-examples": "bin/serve-examples.js"
-  },
   "scripts": {
     "build": "rimraf dist/* && rollup -c",
-    "output": "rimraf out/* && node bin/build-examples.js",
-    "start": "node bin/serve-examples.js"
+    "examples": "npm run build && vite build",
+    "preview": "npm run examples && vite preview --open /",
+    "start": "vite --open /"
   },
   "dependencies": {
     "page": "^1"
@@ -29,25 +26,18 @@
   "devDependencies": {
     "@activewidgets/js": "^3",
     "@activewidgets/options": "^3",
+    "@babel/core": "^7",
+    "@babel/preset-env": "^7",
     "@rollup/plugin-alias": "^3",
     "@rollup/plugin-babel": "^5",
-    "@rollup/plugin-node-resolve": "^11",
+    "@rollup/plugin-node-resolve": "^13",
     "express": "^4",
-    "marked": "^2",
-    "open": "^7",
-    "parcel-bundler": "^1.12",
-    "parcel-plugin-svelte": "^4",
     "rimraf": "^3",
     "rollup": "^2",
     "rollup-plugin-md": "^1",
     "rollup-plugin-svelte": "^7",
-    "svelte": "3.29.4"
-  },
-  "alias": {
-    "@activewidgets/examples": "./viewer/index.js",
-    "@activewidgets/examples/shared": "./shared/index.js",
-    "@activewidgets/examples/data": "./data",
-    "@activewidgets/examples/flags": "./flags"
+    "svelte": "3.44.3",
+    "vite": "^2"
   },
   "browserslist": [
     "last 1 chrome versions"
