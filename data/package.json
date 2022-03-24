@@ -2,5 +2,6 @@
   "name": "@activewidgets/examples/data",
   "main": "index.common.js",
   "module": "index.module.js",
+  "types": "index.d.ts",
   "private": true
 }
