@@ -1,7 +1,7 @@
-import glob from 'glob';
-import {resolve} from 'path';
-import {readFileSync, existsSync} from 'fs';
-import {normalizePath} from 'vite'
+let glob = require('glob'),
+    {resolve} = require('path'),
+    {readFileSync, existsSync} = require('fs'),
+    {normalizePath} = require('vite');
 
 
 function angular_jit(path){
@@ -63,7 +63,7 @@ function getIndexPage(root, items, url){
 }
 
 
-export default function(pattern = '*'){
+module.exports = function(pattern = '*'){
 
     let items = {},
         root = '.';
@@ -106,12 +106,20 @@ export default function(pattern = '*'){
             });
         },
 
-        resolveId(id){
+        resolveId(id, importer){
             if (items[id]){
                 return id;
             }
             if (id.endsWith('_vite_ng.js')){
-                return normalizePath(resolve(root) + id);
+                if (id.startsWith('/')){
+                    return normalizePath(resolve(root) + id);  
+                }
+                else if (id === './_vite_ng.js'){
+                    return normalizePath(resolve(importer, '../_vite_ng.js'));
+                }
+            }
+            if (id === '@angular/compiler' && importer.endsWith('_vite_ng.js')){
+                return require.resolve(id, {paths: [importer]});
             }
         },
 
