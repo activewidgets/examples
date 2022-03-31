@@ -8,12 +8,17 @@ import pkg from './package.json';
 
 const name = 'ActiveWidgets.Viewer';
 
+let globals = {
+    '@activewidgets/options': 'ActiveWidgets.Options'
+};
+
 export default {
     input: 'viewer/index.js',
     output: [
         { file: pkg.module, format: 'es' },
-        { file: pkg.main, format: 'umd', name }
+        { file: pkg.main, format: 'umd', globals, name, compact: true }
     ],
+    external: Object.keys(globals),
     plugins: [
         svelte({
             emitCss: false
