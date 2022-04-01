@@ -36,7 +36,7 @@ function page(path, pkg){
 
     if (/^react-scripts /.test(pkg.scripts.start)){
         return readFileSync(resolve(path, '../public/index.html'), 'utf-8').replace('</body>', `
-            <script src="./src/index.jsx" type="module"></script>
+            <script src="./src/index.js" type="module"></script>
             </body>
         `);
     }
@@ -63,12 +63,19 @@ function getIndexPage(root, items, url){
 }
 
 
-module.exports = function(pattern = '*'){
+module.exports = function(pattern = '*', loader){
 
     let items = {},
-        root = '.';
-
-
+        root = '.',
+        filter = /[\\\/]src[\\\/].*\.[jt]sx?$/;
+    
+    let esBuildPlugin = {
+        name: 'load-js-as-jsx',
+        setup(build) {
+            build.onLoad({filter}, ({path}) => ({loader, contents: readFileSync(path, 'utf-8')}));
+        }
+    };
+    
     return {
         name: 'examples',
 
@@ -87,6 +94,23 @@ module.exports = function(pattern = '*'){
         config(cfg){
             if (cfg.root){
                 root = cfg.root;
+            }
+
+            if (loader){
+
+                console.log('loader: ' + loader);
+
+                cfg.esbuild = {
+                    loader,
+                    include: filter,
+                    exclude: /node_modules/
+                };
+            
+                cfg.optimizeDeps = cfg.optimizeDeps || {};
+                
+                cfg.optimizeDeps.esbuildOptions = {
+                    plugins: [esBuildPlugin]
+                };
             }
         },
 
