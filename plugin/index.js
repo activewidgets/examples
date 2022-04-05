@@ -67,7 +67,7 @@ module.exports = function(pattern = '*', loader){
 
     let items = {},
         root = '.',
-        filter = /[\\\/]src[\\\/].*\.[jt]sx?$/;
+        filter = /\.jsx$|\.tsx$|\.ts$|[\\\/]src[\\\/].*\.js$/;
     
     let esBuildPlugin = {
         name: 'load-js-as-jsx',
